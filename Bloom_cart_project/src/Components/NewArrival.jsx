@@ -1,6 +1,6 @@
 import React from 'react'
 import { useCart } from './CartContext';
-
+import './NewArrivals.css'
 
 const products = [
     {
@@ -29,24 +29,24 @@ const products = [
     },
 ]
 const NewArrival = () => {
-    const {addToCart} = useCart();
+    const {addToCart, addToWishlist } = useCart();
   return (
     <div>
       <section  className='arrivals-section'>
         <div className='arrivals-header'>
             <h2>New Arrivals</h2>
+            <a href="">VIEW ALL PRODUCTS</a>
         </div>
-        <div>
+        <div className='arrivals-grid'>
             {products.map((product) => (
-                <div>
-                <div className='product-cart'>
+               
+                <div className='product-card'>
                     <img src={product.image} alt={product.title} />
                     <h3>{product.title}</h3>
                     <p>${product.price}</p>
-                </div>
-
+                
                 <button onClick={() => addToCart(product)}>Add to Cart</button>
-                <button onClick={() => addToCart(product)}>Add to Whislist</button>
+                <button onClick={() => addToWishlist(product)}>Add to Whislist</button>
 
                 </div>
                

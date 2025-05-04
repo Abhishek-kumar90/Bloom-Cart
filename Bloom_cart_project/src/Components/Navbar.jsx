@@ -2,7 +2,7 @@ import React from 'react'
 import './Navbar.css'
 import { useCart } from './CartContext'
 const Navbar = () => {
-    const {cart} =  useCart();
+    const {cart,wishlist} =  useCart();
   return (
 
     <header className='navbar'>
@@ -17,7 +17,7 @@ const Navbar = () => {
             <a href="">Search</a>
         </nav>
         <div className="navbar-links">
-            <span>Whishlist ({cart.length})</span>
+            <span>Whishlist ({wishlist.length})</span>
             <span>Cart ({cart.length})</span>
         </div>
     </header>
